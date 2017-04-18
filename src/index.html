@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Taller Angular</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+        
+       
+    </head>
+
+
+    <body ng-app="app" ng-strict-dir >
+
+        <!-- ng indica que es un atributo de angular, es donde empieza el javascript
+        por convención suelo llamarlo app pero podría ser otro nombre
+         -->
+        
+       <hello-world> </hello-world>
+       <goodbye-world> </goodbye-world>
+ <!--  en el html lo que debo es convertir el camelcase en guiones -->
+
+    <script src="js/vendor/angular.min.js"></script>
+
+    <script>
+        angular.module('app', []);
+
+        var helloWorldConfig = { 
+            template: '<h1> Hola Mundo </h1>' 
+        };
+        angular.module('app').component('helloWorld', helloWorldConfig);
+        // estoy añadiendo el componente en module que es como el objeto raíz
+        // recordar web components, estoy atomizando mi web, creando componentes que usaré 
+        // una o varias veces 
+        // template contiene el html que se va a renderizar
+        
+        
+        
+        var goodbyeWorldConfig = {
+            template: '<div> <p> Adios </p> </div>'
+        };
+        angular.module('app').component('goodbyeWorld', goodbyeWorldConfig);
+        
+    </script>
+     <!-- declaro el módulo app -->
+
+    </body>
+
+</html>
